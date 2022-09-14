@@ -213,7 +213,7 @@ return [
     ])->toArray(),
 
     'pagination' => [
-        'default_count' => 100
+        'default_count' => 100,
     ],
 
 ];

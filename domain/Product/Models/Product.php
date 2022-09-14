@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    CONST PRICE_CURRENCY = 'EUR';
+    const PRICE_CURRENCY = 'EUR';
 
     public static $allowedFilters = [
         'category',
@@ -28,7 +28,7 @@ class Product extends Model
         return Attribute::make(
             get: fn ($value) => [
                 'original' => $value,
-                'currency' => Product::PRICE_CURRENCY
+                'currency' => Product::PRICE_CURRENCY,
             ] + (new Discounts($value, $this->category, $this->sku))->execute(),
         );
     }

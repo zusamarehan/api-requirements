@@ -1,4 +1,5 @@
 <?php
+
 namespace Domain\Product\Queries;
 
 use Domain\Product\Models\Product;

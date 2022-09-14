@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Domain\Product\Models\Product;
+use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
 {
@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
 
     protected function getJsonData()
     {
-        $path = database_path() . "/seeders/data.json";
+        $path = database_path().'/seeders/data.json';
 
         return json_decode(file_get_contents($path), true)['products'];
     }

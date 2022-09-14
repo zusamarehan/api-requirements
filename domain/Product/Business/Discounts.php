@@ -4,14 +4,14 @@ namespace Domain\Product\Business;
 
 class Discounts
 {
-    CONST TERMS = [
+    const TERMS = [
         'category' => [
             0 => ['vehicle'],
             30 => ['insurance'],
         ],
         'sku' => [
             15 => ['000003'],
-        ]
+        ],
     ];
 
     public array $value;
@@ -23,10 +23,11 @@ class Discounts
      * @param $category
      * @param $sku
      */
-    public function __construct(public $price, public $category, public $sku) {
+    public function __construct(public $price, public $category, public $sku)
+    {
         $this->value = [
             'final' => $this->price,
-            'discount' => null
+            'discount' => null,
         ];
     }
 
@@ -46,7 +47,7 @@ class Discounts
     protected function applyCategoryDiscounts()
     {
         foreach (Discounts::TERMS['category'] as $index => $key) {
-            if(in_array($this->category, $key)) {
+            if (in_array($this->category, $key)) {
                 $this->value['final'] = $this->price - ($this->price / 100) * $index;
                 $this->value['discount'] = $index.'%';
 
@@ -63,7 +64,7 @@ class Discounts
     protected function applySKUDiscounts()
     {
         foreach (Discounts::TERMS['sku'] as $index => $key) {
-            if(in_array($this->sku, $key)) {
+            if (in_array($this->sku, $key)) {
                 $this->value['final'] = $this->price - ($this->price / 100) * $index;
                 $this->value['discount'] = $index.'%';
 
