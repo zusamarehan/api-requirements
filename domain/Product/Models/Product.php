@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public static $allowedFilters = [
+        'category',
+        'price',
+    ];
 }
