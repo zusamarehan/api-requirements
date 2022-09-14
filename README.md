@@ -1,3 +1,25 @@
+# Setup
+Clone the repository
+- `composer install`
+- `cp .env.example .env`
+- setup the database in the `.env`
+- `php artisan migrate --seed`
+
+### Visit the URL in the browser/any tool of your choice
+- `/api/products`
+
+### Functionality Implemented:
+- Filter by category
+  - `/api/products?filter[category]=insurance`
+- Filter by Price
+  - `/api/products?filter[price]=89000`
+
+### Pagination:
+- Limit the count of item returned
+  - `/api/products?count=2`
+
+NOTE: All the above `query string` can be used with all types of combinations.
+
 # api-requirements
 
 ## Description
